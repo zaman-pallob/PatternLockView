@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">patternlockview</string>
+    <declare-styleable name="PatternLockView">
+        <attr name="lineColor" format="color" />
+        <attr name="lineWidth" format="dimension" />
+        <attr name="lockSize" format="integer" />
+        <attr name="normalColor" format="color" />
+        <attr name="highlightedColor" format="color" />
+    </declare-styleable>
+</resources>
