@@ -16,7 +16,7 @@
                             }
 ###### build.gradle (app)
               dependencies {  
-                             implementation 'com.github.zaman-pallob:patternlockview:1.0.0'
+                             implementation 'com.github.zaman-pallob:patternlockview:1.0.1'
                             }
                             
 # Usage
@@ -31,6 +31,7 @@
                                         app:normalColor="@color/white"
                                         app:highlightedColor="@color/green_dark"
                                         app:lockSize="3"
+                                        app:lineWidth="5dp"
                                       />
 
  ##### Implements the view in code as follows
@@ -40,6 +41,13 @@
                                    PatternLockView patternLockView=findViewById(R.id.pattern_lock_view);
 
                                    patternLockView.setListener(new PatternLockView.Listenser() {
+
+                                   @Override
+                                   public void onProgress(String digit) {
+                                              
+                                        } 
+
+
                                    @Override
                                    public void onFinish(String pattern) {
                                               
