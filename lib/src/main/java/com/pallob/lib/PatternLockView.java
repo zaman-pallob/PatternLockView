@@ -163,6 +163,10 @@ public class PatternLockView extends ViewGroup {
                         currentNode = nodeAt;
                         currentNode.setHighLighted(true);
                         stringbuilder.append(currentNode.getNum());
+                        if (listenser!=null){
+                            listenser.onProgress(String.valueOf(currentNode.getNum()));
+                        }
+
                     } else if (nodeAt == null || nodeAt.isHighLighted()) {
 
                         canvas.drawLine(currentNode.getCenterX(), currentNode.getCenterY(), event.getX(), event.getY(), paint);
@@ -173,6 +177,9 @@ public class PatternLockView extends ViewGroup {
                         lineList.add(pair);
                         currentNode = nodeAt;
                         stringbuilder.append(currentNode.getNum());
+                        if (listenser!=null){
+                            listenser.onProgress(String.valueOf(currentNode.getNum()));
+                        }
                     }
                     invalidate();
                 }
@@ -231,7 +238,9 @@ public class PatternLockView extends ViewGroup {
     }
 
     public interface Listenser {
+        void onProgress(String digit);
         void onFinish(String pattern);
+
     }
 
     private class NodeView extends View {
